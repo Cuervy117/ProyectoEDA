@@ -1,8 +1,6 @@
-package algoritmos;
+package utilerias;
 import algoritmos.*;
-import utilerias.Utilerias;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -51,14 +49,22 @@ public class Menu {
                     }
     
                 }
-                case 3 -> { //incompleto
+                case 3 -> { //Selection Sort listo
+                    System.out.println("Has elegido hacerlo con Selection Sort!");
                     int tamano = tamanoArreglo();
                     int ejecuciones = ejecuciones();
-                    for (int i = 0; i < ejecuciones; i++) {
+                    sc.nextLine();
+                    for (int i = 1; i <= ejecuciones; i++) {
+                        Utilerias.resetAcciones();
                         int [] arreglo = Utilerias.generarArreglo(tamano);
                         BubbleSort.burbuja(arreglo);
-                        System.out.println("Arreglo ordenado: " + Arrays.toString(arreglo));
+                        System.out.println("\nArreglo ordenado con Selection Sort: \n" + Arrays.toString(arreglo));
+                        System.out.println("Numero de operaciones realizadas: " + Utilerias.getAcciones());
+                        System.out.println("Presiona Enter para ordenar el siguiente arreglo, quedan " + (ejecuciones - i) + " Ejecuciones");
+                        sc.nextLine();
                     }
+                    System.out.println("Presiona Enter para dirigirte al menú...");
+                    sc.nextLine();
     
                 }
                 case 4 -> {
