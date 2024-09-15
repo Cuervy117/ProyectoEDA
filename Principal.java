@@ -1,7 +1,5 @@
-package algoritmos;
 import java.io.IOException;
-
-
+import utilerias.Menu;
 public class Principal {
     public static void main (String[] args)throws IOException, InterruptedException {
 

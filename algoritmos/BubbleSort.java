@@ -9,12 +9,9 @@ public class BubbleSort{
                 Utilerias.plusComparaciones(); //como en cada for se ejecuta el if, cuenta como comparación (supongo), lo de adentro ya es cuando la comparación se ejecuta
                 if(arreglo[j]>arreglo[j+1]){
                     Utilerias.swap(arreglo,j , j+1);
-                    Utilerias.plusIntercambios();
                 }
 
             }
         }
     }
-
-
 }

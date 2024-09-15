@@ -8,7 +8,8 @@ public class QuickSort{
            quick_v1(arreglo, pivot + 1, fin);
         }
     }
-    public static int partition(int [] arreglo, int inicio, int fin){
+    
+    private static int partition(int [] arreglo, int inicio, int fin){
         int pivot = arreglo[fin];
         int i = inicio - 1;
         for(int j = inicio; j <= fin -1; j++) {
@@ -16,13 +17,9 @@ public class QuickSort{
             if( arreglo [j] <= pivot){
                 i = i + 1;
                 Utilerias.swap(arreglo, i, j);
-                Utilerias.plusIntercambios();
             }
-
         }
         Utilerias.swap(arreglo, i + 1, fin);
-        Utilerias.plusIntercambios();
-        
         return i + 1;
     }
 }

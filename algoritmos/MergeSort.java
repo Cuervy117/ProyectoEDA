@@ -2,47 +2,48 @@ package algoritmos;
 import utilerias.Utilerias;
 public class MergeSort{
 
-    static void merge(int arr[], int left, int mid, int right) {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
+    public static void mergeSort(int[] arr, int izq, int der) {
+        if (izq < der) {
+            int mid = izq + (der - izq) / 2;
+            mergeSort(arr, izq, mid);
+            mergeSort(arr, mid + 1, der);
 
-        int L[] = new int[n1];
-        int R[] = new int[n2];
-
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[left + i];
-        
-        for (int j = 0; j < n2; ++j)
-            R[j] = arr[mid + 1 + j];
-
-        int i = 0, j = 0;
-
-        int k = left;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i++];
-            } else {
-                arr[k] = R[j++];
-            }
-            k++;
-            Utilerias.plusComparaciones();
-        }
-
-        while (i < n1) {
-            arr[k++] = L[i++];
-        }
-
-        while (j < n2) {
-            arr[k++] = R[j++];
+            merge(arr, izq, mid, der);
         }
     }
 
-    public static void mergeSort(int arr[], int left, int right) {
-        if (left < right) {
-            int mid = (left + right) / 2;
-            mergeSort(arr, left, mid);
-            mergeSort(arr, mid + 1, right);
-            merge(arr, left, mid, right);
+    private static void merge(int[] arr, int izq, int mid, int der) {
+        int inicioSubArr2 = mid + 1;
+
+        Utilerias.plusComparaciones();
+        if (arr[mid] <= arr[inicioSubArr2]) {
+            return;
+        }
+
+        Utilerias.plusComparaciones();
+        while (izq <= mid && inicioSubArr2 <= der) {
+            Utilerias.plusComparaciones();
+            if (arr[izq] <= arr[inicioSubArr2]) {
+                izq++;
+            } else {
+                int value = arr[inicioSubArr2];
+                int index = inicioSubArr2;
+
+                Utilerias.plusComparaciones();
+                while (index != izq) {
+                    arr[index] = arr[index - 1];
+                    Utilerias.plusInserciones();
+                    index--;
+                    Utilerias.plusComparaciones();
+                }
+                arr[izq] = value;
+                Utilerias.plusInserciones();
+
+                izq++;
+                mid++;
+                inicioSubArr2++;
+                Utilerias.plusComparaciones();
+            }
         }
     }
 }
