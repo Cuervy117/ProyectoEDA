@@ -1,4 +1,5 @@
-package algoritmos;
+import algoritmos.*;
+import utilerias.*;
 import java.io.IOException;
 
 
