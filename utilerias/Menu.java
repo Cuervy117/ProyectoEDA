@@ -35,6 +35,7 @@ public class Menu {
                         BubbleSort.burbuja(arreglo);
                         System.out.println("\nArreglo ordenado: \n" + Arrays.toString(arreglo));
                         System.out.println("Numero de operaciones realizadas: " + Utilerias.getAcciones());
+                        Archivo.guardarDatos(); //guarda nuestros datos hasta el momento
                         System.out.println("Presiona Enter para ordenar el siguiente arreglo, quedan " + (ejecuciones - i) + " Ejecuciones");
                         sc.nextLine();
                     }
