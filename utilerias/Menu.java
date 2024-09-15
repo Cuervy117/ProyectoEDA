@@ -49,7 +49,7 @@ public class Menu {
                     }
     
                 }
-                case 3 -> { //incompleto selection
+                case 3 -> { //Selection Sort listo
                     System.out.println("Has elegido hacerlo con Selection Sort!");
                     int tamano = tamanoArreglo();
                     int ejecuciones = ejecuciones();
