@@ -20,7 +20,6 @@ public class MergeSort{
             return;
         }
 
-        Utilerias.plusComparaciones();
         while (izq <= mid && inicioSubArr2 <= der) {
             Utilerias.plusComparaciones();
             if (arr[izq] <= arr[inicioSubArr2]) {
@@ -29,12 +28,10 @@ public class MergeSort{
                 int value = arr[inicioSubArr2];
                 int index = inicioSubArr2;
 
-                Utilerias.plusComparaciones();
                 while (index != izq) {
                     arr[index] = arr[index - 1];
                     Utilerias.plusInserciones();
                     index--;
-                    Utilerias.plusComparaciones();
                 }
                 arr[izq] = value;
                 Utilerias.plusInserciones();
@@ -42,7 +39,6 @@ public class MergeSort{
                 izq++;
                 mid++;
                 inicioSubArr2++;
-                Utilerias.plusComparaciones();
             }
         }
     }
