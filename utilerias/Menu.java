@@ -15,7 +15,7 @@ public class Menu {
             System.out.println("2) Probar con Insertion Sort");
             System.out.println("3) Probar con Selection Sort");
             System.out.println("4) Probar con Quick Sort");
-            System.out.println("5)Probar con Heap Sort");
+            System.out.println("5) Probar con Heap Sort");
             System.out.println("6) Probar con Merge Sort");
             System.out.println("7) Salir ");
             opcion = sc.nextInt();
@@ -43,12 +43,21 @@ public class Menu {
                     sc.nextLine();
                 }
                 case 2 -> { //incompleto
+                    System.out.println("Has elegido hacerlo con InsertionSort!");
                     int tamano = tamanoArreglo();
-                    for (int i = 0; i < ejecuciones(); i++) {
+                    int ejecuciones = ejecuciones();
+                    sc.nextLine();
+                    for (int i = 1; i <= ejecuciones; i++) {
+                        Utilerias.resetAcciones();
                         int [] arreglo = Utilerias.generarArreglo(tamano);
-                        BubbleSort.burbuja(arreglo);
+                        InsertionSort.insertionSort(arreglo);
+                        System.out.println("\nArreglo ordenado: \n" + Arrays.toString(arreglo));
+                        System.out.println("Numero de operaciones realizadas: " + Utilerias.getAcciones());
+                        System.out.println("Presiona Enter para ordenar el siguiente arreglo, quedan " + (ejecuciones - i) + " Ejecuciones");
+                        sc.nextLine();
                     }
-    
+                    System.out.println("Presiona Enter para dirigirte al menú...");
+                    sc.nextLine();
                 }
                 case 3 -> { //Selection Sort listo
                     System.out.println("Has elegido hacerlo con Selection Sort!");
@@ -90,21 +99,36 @@ public class Menu {
                 }
     
                 case 5 -> { //incompleto
+                    System.out.println("Has elegido hacerlo con HeapSort!");
                     int tamano = tamanoArreglo();
-                    for (int i = 0; i < ejecuciones(); i++) {
-                        int [] arreglo = Utilerias.generarArreglo(tamano);
-                        BubbleSort.burbuja(arreglo);
+                    int ejecuciones = ejecuciones();
+                    sc.nextLine();
+                    for(int i = 1; i <= ejecuciones; i++){
+                        Utilerias.resetAcciones();
+                        int[] arreglo = Utilerias.generarArreglo(tamano);
+                        HeapSort.heapsort(arreglo);
+                        System.out.println("\nArreglo ordenado: \n" + Arrays.toString(arreglo));
+                        System.out.println("Numero de operaciones realizadas: " + Utilerias.getAcciones());
+                        System.out.println("Presiona Enter para ordenar el siguietne arreglo, quedan " + (ejecuciones - i) + "Ejecuciones");
+                        sc.nextLine();
                     }
     
                 }
     
                 case 6 -> { //incompleto
+                    System.out.println("Has elegido hacerlo con MergeSort!");
                     int tamano = tamanoArreglo();
-                    for (int i = 0; i < ejecuciones(); i++) {
-                        int [] arreglo = Utilerias.generarArreglo(tamano);
-                        BubbleSort.burbuja(arreglo);
+                    int ejecuciones = ejecuciones();
+                    sc.nextLine();
+                    for(int i = 1; i <= ejecuciones; i++){
+                        Utilerias.resetAcciones();
+                        int[] arreglo = Utilerias.generarArreglo(tamano);
+                        MergeSort.mergeSort(arreglo, 0, (arreglo.length - 1));
+                        System.out.println("\nArreglo ordenado: \n" + Arrays.toString(arreglo));
+                        System.out.println("Numero de operaciones realizadas: " + Utilerias.getAcciones());
+                        System.out.println("Presiona Enter para ordenar el siguietne arreglo, quedan " + (ejecuciones - i) + "Ejecuciones");
+                        sc.nextLine();
                     }
-    
                 }
 
                 case 7 -> {

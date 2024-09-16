@@ -15,7 +15,6 @@ public class SelectionSort{
                 }        
             }  
             Utilerias.swap(arr, i,min);
-            Utilerias.plusIntercambios();
         }  
     }  
 }

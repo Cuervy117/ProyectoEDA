@@ -11,6 +11,7 @@ public class Utilerias {
         int aux = arr[val1];
         arr[val1] = arr[val2];
         arr[val2] = aux;
+        Utilerias.plusIntercambios();
     }
 
     public static int[] generarArreglo(int tamaño){
@@ -45,7 +46,4 @@ public class Utilerias {
         comparaciones++;
     }
 
-    public static long getComparaciones(){
-        return comparaciones;
-    }
 }
