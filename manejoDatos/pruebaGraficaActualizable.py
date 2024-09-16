@@ -1,3 +1,4 @@
+import os
 from tkinter import filedialog
 import matplotlib
 matplotlib.use('TkAgg')
@@ -71,7 +72,8 @@ class Grafica:
 
     def refresh(self):
         algo = ['BubbleSort', 'InsertionSort', 'SelectionSort', 'QuickSort', 'HeapSort', 'MergeSort']
-        with open('..\\DatosGuardados\\Datos.txt', 'r') as f:
+        directorio = os.path.join('..', 'DatosGuardados', 'Datos.txt')
+        with open(directorio, 'r', encoding='utf-8') as f:
             datos = f.readlines()
             insertionsort = []
             selectionsort = []

@@ -13,7 +13,7 @@ public class QuickSort{
         int pivot = arreglo[fin];
         int i = inicio - 1;
         for(int j = inicio; j <= fin -1; j++) {
-            Utilerias.plusComparaciones(); //como en cada for se ejecuta el if, cuenta como comparación (supongo)
+            Utilerias.plusComparaciones(); // Para cada ejecución
             if( arreglo [j] <= pivot){
                 i = i + 1;
                 Utilerias.swap(arreglo, i, j);
