@@ -26,13 +26,8 @@ public class MergeSort{
                 izq++;
             } else {
                 int value = arr[inicioSubArr2];
-                int index = inicioSubArr2;
 
-                while (index != izq) {
-                    arr[index] = arr[index - 1];
-                    Utilerias.plusInserciones();
-                    index--;
-                }
+                System.arraycopy(arr, izq, arr, izq + 1, inicioSubArr2 - izq); // Optimización de merge
                 arr[izq] = value;
                 Utilerias.plusInserciones();
 
