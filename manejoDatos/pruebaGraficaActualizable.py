@@ -73,48 +73,51 @@ class Grafica:
     def refresh(self):
         algo = ['BubbleSort', 'InsertionSort', 'SelectionSort', 'QuickSort', 'HeapSort', 'MergeSort']
         directorio = os.path.join('..', 'DatosGuardados', 'Datos.txt')
-        with open(directorio, 'r', encoding='utf-8') as f:
-            datos = f.readlines()
-            insertionsort = []
-            selectionsort = []
-            bubblesort = []
-            quicksort = []
-            heapsort = []
-            mergesort = []
-            for linea in datos:
-                tokens = linea.strip().split('\t')
-                bubblesort.append(int(tokens[0]))
-                insertionsort.append(int(tokens[1]))
-                selectionsort.append(int(tokens[2]))
-                quicksort.append(int(tokens[3]))
-                heapsort.append(int(tokens[4]))
-                mergesort.append(int(tokens[5]))
-            self.iterativos.clear()
-            self.recursivos.clear()
-            size = [50, 100, 500, 800, 1000, 2000, 5000, 10000]
-            self.iterativos.plot(size, bubblesort, label=algo[0], marker='o')
-            self.iterativos.plot(size, insertionsort, label=algo[1], marker='o')
-            self.iterativos.plot(size, selectionsort, label=algo[2], marker='o')
-            self.iterativos.set_ylabel('Operaciones realizadas')
-            self.iterativos.set_xlabel('Tamaño de arreglos')
-            self.iterativos.set_title('Algoritmos iterativos')
-            self.iterativos.legend()
-            self.iterativos.set_yticks([0, 25000000, 50000000, 75000000, 100000000])
-            self.iterativos.set_yticklabels(['0', '25M', '50M', '75M', '100M'])
+        if os.path.exists(directorio):
+            with open(directorio, 'r', encoding='utf-8') as f:
+                datos = f.readlines()
+                insertionsort = []
+                selectionsort = []
+                bubblesort = []
+                quicksort = []
+                heapsort = []
+                mergesort = []
+                for linea in datos:
+                    tokens = linea.strip().split('\t')
+                    bubblesort.append(int(tokens[0]))
+                    insertionsort.append(int(tokens[1]))
+                    selectionsort.append(int(tokens[2]))
+                    quicksort.append(int(tokens[3]))
+                    heapsort.append(int(tokens[4]))
+                    mergesort.append(int(tokens[5]))
+                self.iterativos.clear()
+                self.recursivos.clear()
+                size = [50, 100, 500, 800, 1000, 2000, 5000, 10000]
+                self.iterativos.plot(size, bubblesort, label=algo[0], marker='o')
+                self.iterativos.plot(size, insertionsort, label=algo[1], marker='o')
+                self.iterativos.plot(size, selectionsort, label=algo[2], marker='o')
+                self.iterativos.set_ylabel('Operaciones realizadas')
+                self.iterativos.set_xlabel('Tamaño de arreglos')
+                self.iterativos.set_title('Algoritmos iterativos')
+                self.iterativos.legend()
+                self.iterativos.set_yticks([0, 25000000, 50000000, 75000000, 100000000])
+                self.iterativos.set_yticklabels(['0', '25M', '50M', '75M', '100M'])
 
-            self.recursivos.plot(size, quicksort, label=algo[3], marker='o')
-            self.recursivos.plot(size, heapsort, label=algo[4], marker='o')
-            self.recursivos.plot(size, mergesort, label=algo[5], marker='o')
+                self.recursivos.plot(size, quicksort, label=algo[3], marker='o')
+                self.recursivos.plot(size, heapsort, label=algo[4], marker='o')
+                self.recursivos.plot(size, mergesort, label=algo[5], marker='o')
 
-            self.recursivos.set_ylabel('Operaciones realizadas')
-            self.recursivos.set_xlabel('Tamaño de arreglos')
-            self.recursivos.set_title('Algoritmos recursivos')
+                self.recursivos.set_ylabel('Operaciones realizadas')
+                self.recursivos.set_xlabel('Tamaño de arreglos')
+                self.recursivos.set_title('Algoritmos recursivos')
 
-            self.recursivos.legend()
+                self.recursivos.legend()
 
-            self.recursivos.set_yticks([0, 100000, 200000, 300000, 400000, 500000])
-            self.recursivos.set_yticklabels(['0', '100K', '200K', '300K', '400K', '500K'])
-            self.canvas.draw()
+                self.recursivos.set_yticks([0, 100000, 200000, 300000, 400000, 500000])
+                self.recursivos.set_yticklabels(['0', '100K', '200K', '300K', '400K', '500K'])
+                self.canvas.draw()
+        else:
+            print(f"El archivo {directorio} no existe, favos de obtener los datos antes de ejecutar")
 
 
 root = tk.Tk()
