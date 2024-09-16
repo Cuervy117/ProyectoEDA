@@ -17,7 +17,7 @@ public class Utilerias {
         int[] arr = new int[tamaño];
         Random rand = new Random();
         for(int i = 0; i < tamaño; i ++ ){
-            arr[i] = rand.nextInt(999) + 1;
+            arr[i] = rand.nextInt(100000) + 1;
         }
         return arr;
     }

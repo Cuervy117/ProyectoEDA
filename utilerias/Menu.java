@@ -35,7 +35,7 @@ public class Menu {
                         BubbleSort.burbuja(arreglo);
                         System.out.println("\nArreglo ordenado: \n" + Arrays.toString(arreglo));
                         System.out.println("Numero de operaciones realizadas: " + Utilerias.getAcciones());
-                        Archivo.guardarDatos(); //guarda nuestros datos hasta el momento
+                        Archivo.guardarDatos(arreglo.length, opcion - 1);//guarda nuestros datos hasta el momento
                         System.out.println("Presiona Enter para ordenar el siguiente arreglo, quedan " + (ejecuciones - i) + " Ejecuciones");
                         sc.nextLine();
                     }
@@ -61,6 +61,7 @@ public class Menu {
                         BubbleSort.burbuja(arreglo);
                         System.out.println("\nArreglo ordenado con Selection Sort: \n" + Arrays.toString(arreglo));
                         System.out.println("Numero de operaciones realizadas: " + Utilerias.getAcciones());
+                        Archivo.guardarDatos(tamano, opcion);
                         System.out.println("Presiona Enter para ordenar el siguiente arreglo, quedan " + (ejecuciones - i) + " Ejecuciones");
                         sc.nextLine();
                     }
@@ -79,6 +80,7 @@ public class Menu {
                         QuickSort.quick_v1(arreglo, 0, arreglo.length - 1);
                         System.out.println("\nArreglo ordenado: \n" + Arrays.toString(arreglo));
                         System.out.println("Numero de operaciones realizadas: " + Utilerias.getAcciones());
+                        Archivo.guardarDatos(tamano, opcion);
                         System.out.println("Presiona Enter para ordenar el siguiente arreglo, quedan " + (ejecuciones - i) + " Ejecuciones");
                         sc.nextLine();
                     }
