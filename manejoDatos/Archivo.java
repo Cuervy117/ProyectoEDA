@@ -21,6 +21,7 @@ public class Archivo {
                 }
                 escritor.newLine();
             }
+            System.out.println("Datos guardados exitosamente");
             escritor.close();
         } catch (IOException e) {
             System.out.println("Error al guardar datos en el archivo" + e.getMessage());
