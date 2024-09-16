@@ -1,13 +1,14 @@
+package principal;
+
 import algoritmos.*;
+import manejoDatos.Archivo;
 import utilerias.*;
 
 public class ObtencionDeDatosAutomaticos {
     public static void main(String[] args) {
         long[][] datos = new long[8][6];
         int contador = 0;
-        String[] algoritmos = {"BubbleSort", "InsertionSort", "SelectionSort", "QuickSort" , "HeapSort", "MergeSort"};
-        // Cambiar el limite de i para la cantidad de iteraciones
-        int[] operaciones = {50, 100, 500, 800, 1000, 2000, 5000, 10000};
+        int[] operaciones = {50, 100, 500, 800, 1000, 2000, 5000, 10000}; // Arreglo que contiene los tamaños con los que se prueban los algoritmos 
         for(int i : operaciones){
             for(int j = 0; j < 5; j++){
                 int[] arrog = Utilerias.generarArreglo(i);
@@ -57,6 +58,7 @@ public class ObtencionDeDatosAutomaticos {
             
             contador++;
         }
-        Archivo.guardarDatosAutomaticos(algoritmos, datos);
+
+        Archivo.guardarDatosAutomaticos(datos);
     }
 }
