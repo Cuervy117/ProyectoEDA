@@ -4,7 +4,7 @@ public class QuickSort{
     public static void quick_v1(int [] arreglo, int inicio, int fin){
         if(inicio < fin){
            int pivot = partition(arreglo, inicio, fin);
-           quick_v1(arreglo, inicio, pivot-1);
+           quick_v1(arreglo, inicio, pivot - 1);
            quick_v1(arreglo, pivot + 1, fin);
         }
     }

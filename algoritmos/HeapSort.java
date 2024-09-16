@@ -31,7 +31,6 @@ public class HeapSort{
             raiz = der;
         }
 
-        Utilerias.plusComparaciones();
         if (raiz != i) {
             Utilerias.swap(arr, raiz, i);
             heapify(arr, n, raiz);
