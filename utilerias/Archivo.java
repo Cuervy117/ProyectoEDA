@@ -17,7 +17,6 @@ public class Archivo {
         }
     }
 
-<<<<<<< HEAD
 
     public static void reescribirArchivo() {
         String ruta = "C:\\Users\\LAP-CIT01\\Downloads\\EDA II\\ProyectoEDA\\Datos.txt";
@@ -25,8 +24,9 @@ public class Archivo {
             escritor.write("");
         } catch (IOException e) {
             System.out.println("Error al guardar datos en el archivo" + e.getMessage());
-        }
-=======
+        } 
+    }
+
     public static void guardarDatosAutomaticos(String[] algoritmos, long[][] datos){
         try {
             String ruta = "D:\\EDA II\\repoProyecto\\Datos.txt"; //adaptarlo a tu computadora y donde quieres guardar el archivo
@@ -49,7 +49,7 @@ public class Archivo {
         } catch (IOException e) {
             System.out.println("Error al guardar datos en el archivo" + e.getMessage());
         }  
->>>>>>> 3b7a308eb76f37d96a1d6e8fe26182dd2990cbae
+
     }
 }
 
