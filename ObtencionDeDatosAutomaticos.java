@@ -3,54 +3,56 @@ import utilerias.*;
 
 public class ObtencionDeDatosAutomaticos {
     public static void main(String[] args) {
-        long[][] datos = new long[1000][6];
+        long[][] datos = new long[8][6];
         int contador = 0;
         String[] algoritmos = {"BubbleSort", "InsertionSort", "SelectionSort", "QuickSort" , "HeapSort", "MergeSort"};
         // Cambiar el limite de i para la cantidad de iteraciones
-        for(int i = 50; i < 10001; i += 50){
+        int[] operaciones = {50, 100, 500, 800, 1000, 2000, 5000, 10000};
+        for(int i : operaciones){
             for(int j = 0; j < 5; j++){
                 int[] arrog = Utilerias.generarArreglo(i);
+                int[] arrprueba = new int[i];
 
                 // Para bubblesort
-                int[] arrprueba = arrog;
+                Utilerias.resetAcciones();
+                arrprueba = arrog.clone();
                 BubbleSort.burbuja(arrprueba);
                 datos[contador][0] += Utilerias.getAcciones();
-                Utilerias.resetAcciones();
 
                 // Para insertionsort
-                arrprueba = arrog;
+                Utilerias.resetAcciones();
+                arrprueba = arrog.clone();
                 InsertionSort.insertionSort(arrprueba);
                 datos[contador][1] += Utilerias.getAcciones();
-                Utilerias.resetAcciones();
 
                 // Para selectionsort
-                arrprueba = arrog;
+                Utilerias.resetAcciones();
+                arrprueba = arrog.clone();
                 SelectionSort.selectionSort(arrprueba);
                 datos[contador][2] += Utilerias.getAcciones();
-                Utilerias.resetAcciones();
 
                 // Para quicksort
-                arrprueba = arrog;
+                Utilerias.resetAcciones();
+                arrprueba = arrog.clone();
                 QuickSort.quick_v1(arrprueba, 0 , arrog.length - 1);
                 datos[contador][3] += Utilerias.getAcciones();
-                Utilerias.resetAcciones();
 
                 // Para heapsort
-                arrprueba = arrog;
+                Utilerias.resetAcciones();
+                arrprueba = arrog.clone();
                 HeapSort.heapsort(arrprueba);
                 datos[contador][4] += Utilerias.getAcciones();
-                Utilerias.resetAcciones();
 
                 // Para mergesort
-                arrprueba = arrog;
+                Utilerias.resetAcciones();
+                arrprueba = arrog.clone();
                 MergeSort.mergeSort(arrprueba, 0, (arrog.length - 1));
                 datos[contador][5] += Utilerias.getAcciones();
-                Utilerias.resetAcciones();
             }
 
             // Obtener promedios
             for(int j = 0; j < 6; j++){
-                datos[contador][j] = datos[contador][j] / 5;
+                datos[contador][j] = (datos[contador][j] / 5);
             }
             
             contador++;
