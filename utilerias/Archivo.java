@@ -48,6 +48,7 @@ public class Archivo {
         } catch (IOException e) {
             System.out.println("Error al guardar datos en el archivo" + e.getMessage());
         }  
+
     }
 }
 
