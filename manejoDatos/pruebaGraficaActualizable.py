@@ -73,8 +73,9 @@ class Grafica:
     def refresh(self):
         algo = ['BubbleSort', 'InsertionSort', 'SelectionSort', 'QuickSort', 'HeapSort', 'MergeSort']
         directorio = os.path.join('..', 'DatosGuardados', 'Datos.txt')
-        if os.path.exists(directorio):
-            with open(directorio, 'r', encoding='utf-8') as f:
+        ruta_completa = os.path.abspath(directorio)
+        if os.path.exists(ruta_completa):
+            with open(ruta_completa, 'r', encoding='utf-8') as f:
                 datos = f.readlines()
                 insertionsort = []
                 selectionsort = []
