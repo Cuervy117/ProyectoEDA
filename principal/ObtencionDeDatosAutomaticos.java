@@ -5,7 +5,9 @@ import java.net.URISyntaxException;
 import algoritmos.*;
 import manejoDatos.Archivo;
 import utilerias.*;
-
+/**
+ * La clase ObtencionDeDatosAutomaticos extrae información de los algoritmos de ordenamiento y la guarda en un archivo txt
+ */
 public class ObtencionDeDatosAutomaticos {
     public static void main(String[] args) throws URISyntaxException {
         long[][] datos = new long[8][6];

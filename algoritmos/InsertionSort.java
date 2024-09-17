@@ -1,7 +1,13 @@
 package algoritmos;
 import utilerias.Utilerias;
+/**
+ * La clase InsertionSort proporciona el método correspondiente al algoritmo de ordenamiento insertionsort
+ */
 public class InsertionSort{
-
+    /**
+     * Ordena un arreglo con el algoritmo de insertionsort
+     * @param array El arreglo a ordenar
+     */
     public static void insertionSort(int[] array){
         int n = array.length;  
         for (int j = 1; j < n; j++) {  

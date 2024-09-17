@@ -1,8 +1,14 @@
 package algoritmos;
 
 import utilerias.Utilerias;
-
+/**
+ * La clase BubbleSort proporciona el método correspondiente al algoritmo de ordenamiento bubblesort mejorado
+ */
 public class BubbleSort{
+    /**
+     * Ordena un arreglo con el algoritmo de bubblesort
+     * @param arreglo El arreglo a ordenar
+     */
     public static void burbuja(int [] arreglo){
         boolean bandera;
         for(int i = arreglo.length; i >=0; i--){
@@ -13,11 +19,8 @@ public class BubbleSort{
                     Utilerias.swap(arreglo,j , j+1);
                     bandera = true;
                 }
-
             }
-            if (!bandera ){
-                break;
-            }
+            if (!bandera ) break;
         }
     }
 }

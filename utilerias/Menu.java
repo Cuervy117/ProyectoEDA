@@ -4,8 +4,16 @@ import algoritmos.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
-
+/**
+ * La clase Menu proporciona métodos para la presentación y ejecución de diferentes algoritmos de ordenamientos
+ */
 public class Menu {
+    /**
+     * Muestra el menú con los algoritmos a realizar, esperando a que el usuario elija una opción para mostrar el proceso que siguen dichos métodos
+     * @param sc El Scanner para leer los datos
+     * @throws IOException Para manejar las excepciones de IOException
+     * @throws InterruptedException Para manejar las excepciones de InterruptedException
+     */
     public static void menu(Scanner sc) throws IOException, InterruptedException{
         int opcion;
         do { 
@@ -132,6 +140,11 @@ public class Menu {
 
     }
 
+    /**
+     * Pregunta al usuario por el tamaño de los arreglos a ordenar 
+     * @param sc El Scanner para la lectura de los datos
+     * @return Devuelve el tamaño del arreglo deseado
+     */
     public static int tamanoArreglo(Scanner sc){
         int tamano;
         System.out.println("De qué tamaño quieres que sea tu arreglo");
@@ -139,14 +152,22 @@ public class Menu {
         return tamano;
         
     }
-
+    /**
+     * Pregunta al usuario las veces que se ejecutaran los algoritmos
+     * @param sc El Scanner para la lectura de datos
+     * @return Devuelve la cantidad de ejecuciones deseadas
+     */
     public static int ejecuciones(Scanner sc){
         int ejecuciones;
         System.out.println("Cuantas pruebas del algoritmo quieres ejecutar");
         ejecuciones = sc.nextInt();
         return ejecuciones;
     }
-
+     /**
+      * Muestra al usuario los algoritmos disponibles
+      * @param sc El scanner para la lectura de datos
+      * @return Devuelve el valor que corresponde al algoritmo deseado
+      */
     private static int mostrarMenu(Scanner sc){
         System.out.println("1) Probar con Bubble Sort");
         System.out.println("2) Probar con Insertion Sort");
