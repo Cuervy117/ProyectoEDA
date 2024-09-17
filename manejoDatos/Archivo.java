@@ -3,13 +3,16 @@ package manejoDatos;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 public class Archivo {
-    public static void guardarDatosAutomaticos(long[][] datos){// Función que guarda los datos de una matriz en un archivo .txt
+    public static void guardarDatosAutomaticos(long[][] datos) throws URISyntaxException{// Función que guarda los datos de una matriz en un archivo .txt
         try {
-            Path directorio = Paths.get("DatosGuardados"); // Creamos la carpeta en caso de que no existe
+            Path packageActual = Paths.get(Archivo.class.getResource("Archivo.class").toURI()).getParent(); // Obtenemos el directorio del package
+            Path directorio = packageActual.resolve("DatosGuardados"); // Creamos la carpeta en caso de que no existe
             if (!Files.exists(directorio)) {
                 Files.createDirectories(directorio);
             }

@@ -1,11 +1,13 @@
 package principal;
 
+import java.net.URISyntaxException;
+
 import algoritmos.*;
 import manejoDatos.Archivo;
 import utilerias.*;
 
 public class ObtencionDeDatosAutomaticos {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws URISyntaxException {
         long[][] datos = new long[8][6];
         int contador = 0;
         int[] operaciones = {50, 100, 500, 800, 1000, 2000, 5000, 10000}; // Arreglo que contiene los tamaños con los que se prueban los algoritmos 
